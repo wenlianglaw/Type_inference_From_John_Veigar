@@ -19,9 +19,9 @@ generic type that unifies the two inputs (not the set of substitutions that woul
 That means, as you learn specific information about a generic type, you must keep track of how that 
 information is bound. 
  
-For instance, you may be first asked to unify \`a and [`b].  After that unification, our type environment must 
+For instance, you may be first asked to unify \`a and [\`b].  After that unification, our type environment must 
 remember that \`a should be substituted with [\`b].   So, if the next query is to unify \`a and `c, the most 
-specific generic type will again be [`b]. 
+specific generic type will again be [\`b]. 
  
 1. The grammar for the type language is as follows: 
  
@@ -57,14 +57,14 @@ program should exit without reading further input or producing further output.
 8. When your program outputs either “ERR” or “BOTTOM”, you must not read any additional input, or 
 produce any additional output. 
  
-9. All input is case sensitive.  For instance, `a and `A represent different type variables. 
+9. All input is case sensitive.  For instance, \`a and \`A represent different type variables. 
  
 10. If unification would create a recursive type, you must output “BOTTOM”. 
  
 11. Different primitive types cannot unify with each other. 
  
 12. When you unify two type variables, it does not matter which name you use as the proper name.  For 
-instance, if you’re asked to unify `a and `b, either `a or `b are acceptable as an output. 
+instance, if you’re asked to unify \`a and \`b, either \`a or \`b are acceptable as an output. 
  
 2.)Other)Requirements))
 You$will$receive$a$0$on$this$if$any$of$these$requirements$are$not$met!$
@@ -101,7 +101,7 @@ For test cases, what one would type on the command line is BLACK, input is in GR
 output is in BLUE. 
 Case)1)
 ./unify
-(int, int) -> `a & (`a, int) -> int
+(int, int) -> \`a & (\`a, int) -> int
 (int, int)->int
 QUIT 
 Case)2)
@@ -114,14 +114,14 @@ Case)3)
 ERR
 Case)4)
 ./unify
-(`a, `b) -> int & ([`b], `c) -> `d
+(\`a, \`b) -> int & ([\`b], \`c) -> \`d
 ([`c], `c) -> int
 `z & int
 int
 `a & int
 BOTTOM
 Note that, for the first output, it’s equally acceptable to output: 
-([`b], `b) -> int
+([\`b], `b) -> int
 For the third unification in this case, it should fail because `a is already bound to a list type (specifically, a 
 list that contains items of type `c).
 4.)Reference)Environment)
