@@ -95,7 +95,7 @@ int
 BOTTOM
 Note that, for the first output, it’s equally acceptable to output: 
 ([\`b], \`b) -> int
-For the third unification in this case, it should fail because `a is already bound to a list type (specifically, a 
+For the third unification in this case, it should fail because \`a is already bound to a list type (specifically, a 
 list that contains items of type \`c).
 4.)Reference)Environment)
 The reference environment is once again kimota.net.  Your same login credentials will continue to work. 
