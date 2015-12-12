@@ -19,8 +19,8 @@ generic type that unifies the two inputs (not the set of substitutions that woul
 That means, as you learn specific information about a generic type, you must keep track of how that 
 information is bound. 
  
-For instance, you may be first asked to unify `a and [`b].  After that unification, our type environment must 
-remember that `a should be substituted with [`b].   So, if the next query is to unify `a and `c, the most 
+For instance, you may be first asked to unify \`a and [`b].  After that unification, our type environment must 
+remember that \`a should be substituted with [\`b].   So, if the next query is to unify \`a and `c, the most 
 specific generic type will again be [`b]. 
  
 1. The grammar for the type language is as follows: 
