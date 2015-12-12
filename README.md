@@ -9,7 +9,6 @@ tested.  Section 3 provides a few example outputs.
 As usual, I will grade your program by running it against a large test suite.  You will be graded by the 
 percentage of test cases you get correct. 
  
-The Due Date for this assignment is Dec 14th at 8:00am. 
  
 1.)Program)Specification)
 Your program will construct a type environment, and then perform unifications in that type environment, 
