@@ -72,31 +72,50 @@ harness and come up with a large number of test cases to help you get the best p
  
 For test cases, what one would type on the command line is BLACK, input is in GREEN, and 
 output is in BLUE. 
-Case)1)
+Case 1)
+
 ./unify
+
 (int, int) -> \`a & (\`a, int) -> int
+
 (int, int)->int
+
 QUIT 
-Case)2)
+
+Case 2)
+
 ./unify
-[`a] ^ int
+
+[\`a] ^ int
+
 BOTTOM
-Case)3)
+
+Case 3)
+
 ./unify
-(int, int) & (`a, int)
+
+(int, int) & (\`a, int)
+
 ERR
-Case)4)
+
+Case 4)
+
 ./unify
+
 (\`a, \`b) -> int & ([\`b], \`c) -> \`d
+
 ([\`c], \`c) -> int
+
 `z & int
+
 int
+
 `a & int
+
 BOTTOM
+
 Note that, for the first output, it’s equally acceptable to output: 
+
 ([\`b], \`b) -> int
-For the third unification in this case, it should fail because \`a is already bound to a list type (specifically, a 
-list that contains items of type \`c).
-4.)Reference)Environment)
-The reference environment is once again kimota.net.  Your same login credentials will continue to work. 
-  
+
+For the third unification in this case, it should fail because \`a is already bound to a list type (specifically, a list that contains items of type \`c).
