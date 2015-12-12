@@ -1,14 +1,7 @@
 Programming)Assignment) 3)
 CS 6353 Section 1, Fall 2015 
  
-In this programming assignment, you will be build a type inference engine, using the unification algorithm 
-discussed in class.   You have the choice of C, C++, Go or Rust.  The requirements for your submission are 
-listed in sections 1 and 2 below.  Follow%the%requirements%carefully%and%precisely%–%they%will%be%thoroughly%
-tested.  Section 3 provides a few example outputs. 
- 
-As usual, I will grade your program by running it against a large test suite.  You will be graded by the 
-percentage of test cases you get correct. 
- 
+
  
 1.)Program)Specification)
 Your program will construct a type environment, and then perform unifications in that type environment, 
@@ -64,14 +57,10 @@ produce any additional output.
  
 12. When you unify two type variables, it does not matter which name you use as the proper name.  For 
 instance, if you’re asked to unify \`a and \`b, either \`a or \`b are acceptable as an output. 
+
  
-3.)Test)Cases)
-Below are four sample test cases for you, which I will use in my testing.  Typically, I use anywhere from 
-20g50 test cases, and will definitely use these three.  I strongly recommend you create your own test 
-harness and come up with a large number of test cases to help you get the best possible grade. 
- 
-For test cases, what one would type on the command line is BLACK, input is in GREEN, and 
-output is in BLUE. 
+3.)Test Cases)
+
 Case 1)
 
 ./unify
@@ -82,6 +71,7 @@ Case 1)
 
 QUIT 
 
+
 Case 2)
 
 ./unify
@@ -90,6 +80,7 @@ Case 2)
 
 BOTTOM
 
+
 Case 3)
 
 ./unify
@@ -97,6 +88,7 @@ Case 3)
 (int, int) & (\`a, int)
 
 ERR
+
 
 Case 4)
 
