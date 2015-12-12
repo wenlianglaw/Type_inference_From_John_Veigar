@@ -65,32 +65,6 @@ produce any additional output.
 12. When you unify two type variables, it does not matter which name you use as the proper name.  For 
 instance, if you’re asked to unify \`a and \`b, either \`a or \`b are acceptable as an output. 
  
-2.)Other)Requirements))
-You$will$receive$a$0$on$this$if$any$of$these$requirements$are$not$met!$
-1.! The program must be written entirely in C/C++, Go or Rust, with no third party libraries.  
-2.! If your submission is in C, your program should compile with cc –o unify NETID.c 
-3.! If your submission is in C++, your program should compile with c++ go unify NETID.cpp 
-4.! If your submission is in Rust, your program should compile with rustc –o unify NETID.rs 
-5.! If your submission is in Go: 
-a.! You must create a GO workspace with your NETID as the name. 
-b.! Your program must, when built via “go install”, put a single executable into the workspace’s 
-bin directory, and the executable must be called “unify”. 
-6.! The program must compile and run in the reference environment.  Even if it works on your 
-desktop, if it doesn’t work in the reference environment, you will get a 0. 
-7.! You must submit your homework before 8:00am on the due date. 
-8.! You must submit the homework through the course website, unless otherwise pregapproved by the 
-professor. 
-9.! Your submission may be as a single file or, if you use GO, as a ZIP file, representing your workspace.  
-However, do not include executables or tests in your ZIP file.  Zip the topglevel workspace, and the 
-underlying src directory only.  For instance, if your NETID is xyz12, when I unzip, I expect a directory 
-called xyz12, and then when I go into xyz12, I expect to see a src directory, and in that directory, your 
-source code. 
-10.! You may not give or receive any help from other people on this assignment. 
-11.! You may use references on the Internet to teach yourself any of the above languages. 
-12.! You may NOT use code from any other program, no matter who authored it.  This includes 3rd party 
-libraries. 
-    
-    
 3.)Test)Cases)
 Below are four sample test cases for you, which I will use in my testing.  Typically, I use anywhere from 
 20g50 test cases, and will definitely use these three.  I strongly recommend you create your own test 
@@ -114,15 +88,15 @@ ERR
 Case)4)
 ./unify
 (\`a, \`b) -> int & ([\`b], \`c) -> \`d
-([`c], `c) -> int
+([\`c], \`c) -> int
 `z & int
 int
 `a & int
 BOTTOM
 Note that, for the first output, it’s equally acceptable to output: 
-([\`b], `b) -> int
+([\`b], \`b) -> int
 For the third unification in this case, it should fail because `a is already bound to a list type (specifically, a 
-list that contains items of type `c).
+list that contains items of type \`c).
 4.)Reference)Environment)
 The reference environment is once again kimota.net.  Your same login credentials will continue to work. 
   
