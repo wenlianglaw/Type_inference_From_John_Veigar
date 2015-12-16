@@ -110,7 +110,7 @@ trace( type, buff, env , visit)
 	else
 		visit.insert(type)
 		env.sort_sets(root)		// sets[root][0] is the type that we want
-		if sets[root][0] is (1): pure Var, (2): pure primitive, (3): only 1 element
+		if sets[root][0] is ( PRIMITIVE ||  VAR )
 			buff += sets[root][0]
 		else
 			// continue trace
@@ -575,12 +575,13 @@ int trace(id _id, string &buff, Environment &env, set<id> &visit)  throw (MyExce
 	int ret = 1;
 	int root = env.root(_id);
 	vector<id> &vect = env.m_v_sets[root];
+	Type this_type = env.get_type(vect[0]);
 	if (visit.count(_id)) {
 		throw(MyException("BOTTOM"));
 	} else {
 		visit.insert(_id);
 		env.sort_sets(root);
-		if (env.get_type(vect[0]).m_num_primitive == 0 || env.get_type(vect[0]).m_num_vars == 0 || vect.size() == 1) {
+		if ( (this_type.type == Type::PRIMITIVE || this_type.type == Type::VAR)) {
 			buff += env.get_type(vect[0]).m_str;
 		} else {
 			string this_most_general_from__id;
@@ -925,7 +926,7 @@ int main() {
 		string buff, buff2;
 		getline(cin, input);
 		eatSpace(input);
-		if (input == "QUIT") {
+		if (isPrefix(input.c_str(),"QUIT")) {
 			loop = false;
 		}
 		else {
@@ -989,4 +990,33 @@ BOTTOM
 `a & (str) -> `c
 (`b)->int & `c
 BOTTOM
+
+[`a] & [[[[`D]]]]
+`a & [[[str]]]
+`D & `BUFF
+QUIT
+
+[`a] & [[[()->`D]]]
+`a & `BUFF
+`BUFF & [[()->int]]
+`D & `BUFF2
+QUIT
+
+
+
+`aa & `bb
+`aa & `cc
+`bb & `dd
+`dd & ()->[int]
+`aa & `bb
+`cc & `dd
+[int] & [`ff]
+
+`aD & `bb
+`aD & (`cc, `dd, `ff) -> [`ee]
+`bb & (int,str,real) -> [(     )-> `gg]
+
+
+() -> [ (int,str, `laaSS22) -> [`FD3]] & () -> [(`sd, `wq, real)->[str]]
+
 */
